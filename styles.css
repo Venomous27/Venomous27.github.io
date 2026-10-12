@@ -27,7 +27,7 @@
   height: 110px;              /* Needs to match width for a square/circle */
   object-fit: cover;          /* Keeps original photo ratio without stretching */
   border-radius: 0px;
-  border: 3px solid #272727;  /* Subtle darker gray border around the photo */
+  border: 3px solid #909090;  /* Subtle darker gray border around the photo */
 }
 
 .profile-name {
