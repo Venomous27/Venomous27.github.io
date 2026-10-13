@@ -35,7 +35,7 @@
     color: #ffffff;
     font-size: 27px;
     font-weight: 800;
-    margin: 0 0 4px 0;
+    margin: 0 0 0 0;
 }
 
 .profile-bio {
@@ -43,7 +43,9 @@
   font-size: 17px;
   font-weight: 400;
   max-width: 360px;           /* Prevents text from spreading too wide */
-  margin: 0 auto;             /* Centers the text block */
+  margin: 0 auto;      /* Clears top/bottom margins, keeps text centered */
+  margin-bottom: 14px; /* Space under bio, pushing buttons down */
+  line-height: 1.5;           /* Centers the text block */
 }
 
 .link-icon {
