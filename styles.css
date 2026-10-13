@@ -6,6 +6,7 @@
 
 .link-block a {
   display: block;
+  position: relative;
   margin-bottom: 11px;   /* Adds clean spacing between buttons */
   padding: 14px 20px;    /* Adds space inside the block */
   background: #272727;   /* Solid block color */
@@ -43,4 +44,20 @@
   font-weight: 400;
   max-width: 360px;           /* Prevents text from spreading too wide */
   margin: 0 auto;             /* Centers the text block */
+}
+
+.link-icon {
+  width: 40px;                /* Controls icon size */
+  height: 40px;
+  object-fit: contain;        /* Keeps original PNG aspect ratio */
+}
+
+.link-icon {
+  position: absolute;
+  left: 4px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 50px;
+  height: 50px;
+  object-fit: contain;
 }
