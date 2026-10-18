@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Socials | Mr.Venomous</title>
+    <link href="https://fonts.googleapis.com/css?family=Inter:400,800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Jersey+20&display=swap" rel="stylesheet">
+    <style>
+    :root {
+      --bg-color: #000000;
+      --text-color: #ffffff;
+      --card-bg: #272727;
+      --card-hover-bg: #212121;
+      --border-color: #909090;
+      --border-hover: #cfcfcf;
+    }
+        body {
+            background-color: var(--bg-color);
+            font-family: 'Jersey 20';
+            margin: 0;
+            padding: 40px 16px;
+        }
+
+        .light-mode {
+          --bg-color: #ffffff;
+          --text-color: #000000;
+          --card-bg: #909090;
+          --card-hover-bg: #808080;
+          --border-color: #272727;
+          --border-hover: #212121;
+        }
+
+        /* Parent layout: side-by-side on desktop */
+        .container {
+            display: flex;
+            flex-direction: row;
+            align-items: flex-start;
+            justify-content: center;
+            gap: 70px; /* Space between left and right columns */
+            width: 100%;
+            max-width: 900px;
+            margin: 0 auto;
+            margin-top: 40px;
+        }
+
+        /* Left side */
+        .profile-header {
+            flex: 1;
+            max-width: 320px;
+        }
+
+        /* Right side */
+        .link-block {
+            flex: 1;
+        }
+
+        /* Optional: Stack vertically on phones so it doesn't squish */
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .profile-header {
+                text-align: center;
+            }
+        }
+
+       .pfp {
+            width: 270px;
+            height: 270px;
+            object-fit: cover;
+            border-radius: 0;
+            border: 3px solid var(--border-color);
+            display: block;
+            margin: 0 auto 16px;
+        }
+
+        .profile-bio {
+            color: var(--text-color);
+            font-size: 17px;
+            font-weight: 400;
+            line-height: 1.5;
+            text-align: center;
+        }
+
+        .link-block a {
+            display: block;
+            position: relative;
+            margin-bottom: 11px;
+            padding: 14px 20px;
+            background: var(--card-bg);
+            color: var(--text-color);
+            text-decoration: none;
+            text-align: center;
+            border-radius: 0;
+            border: 3px solid var(--border-color);
+            transition: transform 0.2s ease, background-color 0.2s ease, border-color 0.2s ease;
+        }
+
+        .link-block a:hover {
+            transform: scale(1.04);
+            background-color: var(--card-hover-bg);
+            border-color: var(--border-hover);
+        }
+
+        .link-block a:active {
+            transform: scale(0.98);
+        }
+
+        .link-icon {
+            position: absolute;
+            left: 12px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 37px;
+            height: 37px;
+            object-fit: contain;
+        }
+
+        .btn {
+                   position: absolute;
+                   top: 20px;
+                   right: 20px;
+                   display: flex;
+                   gap: 0px; /* Space between the buttons */
+                   z-index: 10;
+               }
+
+        .top-nav {
+            position: absolute;
+            top: 20px;
+            right: 60px;
+            display: flex;
+            gap: 0px; /* Space between the buttons */
+            z-index: 10;
+        }
+
+        .nav-btn {
+            display: inline-block;
+            padding: 1px 11px;
+            color: var(--text-color);
+            text-decoration: line;
+            font-size: 14px;
+            font-weight: 400;
+        }
+
+        .nav-btn.active {
+            text-decoration: none; /* Removes underline */
+            color: var(--border-color);        /* Dimmed gray */
+            pointer-events: none;  /* Optional: disables click on current page */
+        }
+
+        footer {
+            color: var(--text-color);
+            font-size: 17px;
+            font-weight: 100;
+            font-family: 'VT323', monospace;
+            position: fixed;
+            position: fixed;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+    </style>
+</head>
+<body>
+
+<main class="container">
+<div class="profile-header">
+    <img src="assets/venom-fver.webp" class="pfp" alt="Mr.Venomous profile picture">
+    <p class="profile-bio">These are my only active accounts. If you find any others, it's not me or I don't use that platform anymore.</p>
+</div>
+
+<div class="link-block">
+    <a href="https://youtube.com/@mr.venomous">
+        <img src="assets/yt.webp" alt="YouTube" class="link-icon">
+        YouTube - Mr.Venomous
+    </a>
+    <a href="https://youtube.com/@venomoux27">
+        <img src="assets/yt.webp" alt="YouTube" class="link-icon">
+        YouTube - Venomoux
+    </a>
+    <a href="https://fluxer.gg/NkvInTZn">
+        <img src="assets/fluxer.webp" alt="Fluxer" class="link-icon">
+        Join the Superiors Fluxer Server!
+    </a>
+    <a href="https://bsky.app/profile/venomous27.bsky.social">
+        <img src="assets/bluesky.webp" alt="Bluesky" class="link-icon">
+        Bluesky - venomous27
+    </a>
+    <a href="https://www.twitch.tv/mrvenomous27">
+        <img src="assets/twitch.webp" alt="Twitch" class="link-icon">
+        Twitch - MrVenomous27
+    </a>
+    <a href="https://codeberg.org/Venomous27">
+        <img src="assets/codeberg.webp" alt="Codeberg" class="link-icon">
+        Codeberg - Venomous27
+    </a>
+    <a href="https://github.com/Venomous27">
+        <img src="assets/github.webp" alt="Github" class="link-icon">
+        Github - Venomous27
+    </a>
+</div>
+</main>
+
+<nav class="top-nav">
+    <a href="index.html" class="nav-btn">Home</a>
+    <a href="socials.html" class="nav-btn active">Socials</a>
+    <!-- <a href="#" class="nav-btn">Media Kit</a> -->
+    <!--<a href="#" class="nav-btn">Contact</a>-->
+</nav>
+
+<button onclick="togglemode()" class="btn">
+    <img src="assets/sun-moon.svg"
+</button>
+
+<script>
+function togglemode() {
+   var element = document.body;
+   element.classList.toggle("light-mode");
+}
+</script>
+
+<footer class="footer">
+  <p>Keep smiling and take care of yourself <3</p>
+</footer>
+
+</body>
+</html>

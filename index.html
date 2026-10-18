@@ -1,47 +1,287 @@
 <!DOCTYPE html>
-<html>
 <head>
-    <link href='https://fonts.googleapis.com/css?family=Inter' rel='stylesheet'>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
-    <title>Mr.Venomous</title>
+    <link href="https://fonts.googleapis.com/css?family=Inter:400,800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Jersey+20&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
+
+    <title>Home | Mr.Venomous</title>
     <style>
-    body {
-//        background-image: url('assets/bg-dark.jpg');
-        background-color: #000000;
-      font-family: 'Inter';
-    }
+        :root {
+            --bg-color: #000000;
+            --text-color: #ffffff;
+            --card-bg: #272727;
+            --card-hover-bg: #212121;
+            --border-color: #909090;
+            --border-hover: #cfcfcf;
+            --bio-color: #B6B7B9;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            font-family: 'Inter';
+            margin: 0;
+            padding: 40px 16px;
+        }
+
+        .light-mode {
+            --bg-color: #ffffff;
+            --text-color: #000000;
+            --card-bg: #909090;
+            --card-hover-bg: #808080;
+            --border-color: #272727;
+            --border-hover: #212121;
+            --bio-color: #2F2F2F;
+        }
+
+        .btn {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            display: flex;
+            gap: 0px;
+            z-index: 10;
+        }
+
+        .top-nav {
+            position: absolute;
+            top: 20px;
+            right: 60px;
+            display: flex;
+            gap: 0px;
+            z-index: 10;
+        }
+
+        .nav-btn {
+            display: inline-block;
+            padding: 1px 11px;
+            color: var(--text-color);
+            text-decoration: underline;
+            font-size: 14px;
+            font-weight: 400;
+        }
+
+        .nav-btn.active {
+            text-decoration: none;
+            color: var(--border-color);
+            pointer-events: none;
+        }
+
+        .pfp {
+             width: 270px;
+             height: 270px;
+             object-fit: cover;
+             border-radius: 0;
+             border: 3px solid var(--border-color);
+             display: block;
+             margin: 0 auto 16px;
+         }
+
+         .container {
+             display: flex;
+             flex-direction: row;
+             align-items: flex-start;
+             justify-content: center;
+             gap: 40px;
+             width: 100%;
+             max-width: 1200px;
+             margin: 40px auto 0 auto;
+         }
+
+         .bio-wrapper {
+             display: flex;
+             flex-direction: column;
+             align-items: flex-start;
+             text-align: left;
+         }
+
+         /* Left side */
+         .profile-header {
+             flex: 1;
+             max-width: 320px;
+         }
+
+         .bio {
+             flex: 1;
+         }
+
+         .bio1 {
+            flex-direction: column;
+        }
+
+         /* Optional: Stack vertically on phones so it doesn't squish */
+         @media (max-width: 768px) {
+             .container {
+                 flex-direction: column;
+                 align-items: center;
+             }
+
+             .profile-header {
+                 text-align: center;
+             }
+         }
+
+         .bio {
+             color: var(--bio-color);
+             font-size: 70px;
+             font-weight: 400;
+             line-height: 1.2;
+             text-align: left;
+             font-family: 'Anton';
+         }
+
+         .bio1 {
+            color: var(--text-color);
+            font-size: 40px;
+            font-weight: 300;
+            line-height: 1;
+            text-align: left;
+            font-family: 'Jersey 20';
+        }
+
+        .bio p {
+            margin: 0 0 16px 0; /* Clears default paragraph spacing */
+        }
+
+        .bio1 p {
+            margin: 0; /* Clears extra margin */
+        }
+        .profile-bio {
+            color: var(--text-color);
+            font-size: 17px;
+            font-weight: 200;
+            line-height: 1.3;
+            text-align: center;
+            font-family: 'VT323', monospace;
+            font-style: italic;
+        }
+
+        footer {
+            color: var(--text-color);
+            font-size: 17px;
+            font-weight: 100;
+            font-family: 'VT323', monospace;
+            position: fixed;
+            position: fixed;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .video-container {
+            display: flex;
+            flex-direction: row;
+            gap: 20px;
+            width: 100%;
+            max-width: 1300px;
+            margin: 0 auto;
+        }
+
+        .video-wrapper {
+            flex: 1;
+            aspect-ratio: 16 / 9;
+            border: 2px solid var(--border-color);
+            transition: transform 0.2s ease, border-color 0.2s ease;
+        }
+
+        .video-wrapper:hover {
+            transform: scale(1.03);
+            border-color: var(--border-hover);
+        }
+
+        .video-wrapper iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+            display: block;
+        }
+
+        /* Stack on phones so they don't get squished */
+        @media (max-width: 768px) {
+            .video-container {
+                flex-direction: column;
+            }
+        }
+
+        .video-text {
+            font-size: 60px;
+            font-weight: 500;
+            color: var(--text-color);
+            width: 100%;
+            max-width: 1300px;             /* Matches video container width */
+            margin: 50px auto 16px auto;  /* auto on left/right centers it exactly like the video block */
+            padding: 0;                   /* Ensures no extra inner offset */
+            font-family: 'Jersey 20';
+            box-sizing: border-box;
+        }
     </style>
 </head>
+<body>
 
-<div class="profile-header ">
-<img src="assets/venom.webp" class="pfp" alt="Mr.Venomous profile picture">
-<h1 class="profile-name">Mr.Venomous</h1>
-<p class="profile-bio">Yo...Someone superior who likes to make videos :3</p>
-</div>
+    <main class="container">
+        <div class="profile-header">
+            <img src="assets/venom.webp" class="pfp" alt="Mr.Venomous profile picture">
+            <p class="profile-bio">Jack of all trades, master of none,
+            but oftentimes better than master of one.</p>
+        </div>
 
-<div class="link-block">
-    <a href="https://youtube.com/@mr.venomous">YouTube - Mr.Venomous
-        <img src="assets/yt.webp" alt="YouTube" class="link-icon">
-    </a>
-    <a href="https://youtube.com/@venomoux27">YouTube - Venomoux
-        <img src="assets/yt.webp" alt="YouTube" class="link-icon">
-    </a>
-    <a href="https://fluxer.gg/NkvInTZn">Join the Superiors Fluxer Server!
-        <img src="assets/fluxer.webp" alt="Fluxer" class="link-icon">
-    </a>
-    <a href="https://bsky.app/profile/venomous27.bsky.social">Bluesky - venomous27
-        <img src="assets/bluesky.webp" alt="Bluesky" class="link-icon">
-    </a>
-    <a href="https://www.twitch.tv/mrvenomous27">Twitch - MrVenomous27
-        <img src="assets/twitch.webp" alt="Twitch" class="link-icon">
-    </a>
-    <a href="https://codeberg.org/Venomous27">Codeberg - Venomous27
-    <img src="assets/codeberg.webp" alt="Codeberg" class="link-icon">
-    </a>
-    <a href="https://github.com/Venomous27">Github - Venomous27
-    <img src="assets/github.webp" alt="Github" class="link-icon">
-    </a>
-</div>
+        <div class="bio-wrapper">
+            <div class="bio">
+                <p>YO!<br>I am Venom,</p>
+            </div>
+            <div class="bio1">
+                <p>also known as Venomous. <br>I like making videos on YouTube.<br>
+                    I also like trying out new stuff. That's why my hobby keeps changing :3
+                </p>
+            </div>
+        </div>
+    </main>
+
+    <nav class="top-nav">
+        <a href="index.html" class="nav-btn active">Home</a>
+        <a href="socials.html" class="nav-btn">Socials</a>
+        <!-- <a href="#" class="nav-btn">Media Kit</a> -->
+        <!--<a href="#" class="nav-btn">Contact</a>-->
+    </nav>
+
+    <button onclick="togglemode()" class="btn">
+        <img src="assets/sun-moon.svg" alt="Toggle Theme">
+    </button>
+
+    <script>
+        function togglemode() {
+            var element = document.body;
+            element.classList.toggle("light-mode");
+        }
+    </script>
+
+    <p class="video-text">Featured Videos</p>
+    <div class="video-container">
+        <div class="video-wrapper">
+            <iframe
+                src="https://www.youtube.com/embed?listType=playlist&list=UUO3-ksK5NGDyhGJoJrW1v2w">
+            </iframe>
+        </div>
+        <div class="video-wrapper">
+            <iframe
+                src="https://www.youtube.com/embed?listType=playlist&list=UUO3-ksK5NGDyhGJoJrW1v2w&index=2">
+            </iframe>
+        </div>
+        <div class="video-wrapper">
+            <iframe
+                src="https://www.youtube.com/embed?listType=playlist&list=UUgco-RnXeCmk_1a2Vi_OX0Q">
+            </iframe>
+        </div>
+        <div class="video-wrapper">
+            <iframe
+                src="https://www.youtube.com/embed?listType=playlist&list=UUgco-RnXeCmk_1a2Vi_OX0Q&index=2">
+            </iframe>
+        </div>
+    </div>
+
+    <footer class="footer">
+      <p>Keep smiling and take care of yourself <3</p>
+    </footer>
 </body>
 </html>
